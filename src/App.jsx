@@ -11,10 +11,10 @@ function App() {
     <div> 
       {/* <UseStateObject/> */}
       {/* <UseStateArray/> */}
-      {/* <UploadImage/> */}
       {/* <UseEffect1/> */}
       {/* <UseEffect2/> */}
-      <UseEffect3/>
+      {/* <UseEffect3/> */}
+      <UploadImage/>
 
       
     </div>
