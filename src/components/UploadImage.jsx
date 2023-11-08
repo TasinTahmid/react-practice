@@ -16,7 +16,6 @@ const UploadImage = () => {
     const checkboxRef = useRef();
 
     const addItems = (item) => {
-        console.log(item)
         setItems([...items, item]);
     }
     const deleteFirst = () => {
@@ -49,18 +48,18 @@ const UploadImage = () => {
             
             <ul>
                 
-                {items.map((item, index) => (
+                {(items.map((item, index) => (
                     <li key={index}>
-                        <input 
+                        <input key={item}
                             ref={checkboxRef}
                             type="checkbox"
                             value={isChecked}
                             // checked={false}
                             onChange={()=>handleCheckboxChange(item)}
-                        />{}
+                        />
                         <img src={item} alt="image" className="img"/>
                     </li>
-                ))
+                )))
                 }
 
             </ul>
