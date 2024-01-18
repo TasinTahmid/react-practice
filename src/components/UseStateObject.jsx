@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 const UseStateObject = () => {
     const [name, setName] = useState({ firstName: "", lastName: "" });
@@ -9,8 +9,8 @@ const UseStateObject = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setToggleList(!toggleList);
-        const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-        setUsers(response.data);
+        //     const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+        //     setUsers(response.data);
     };
 
     return (
@@ -19,11 +19,13 @@ const UseStateObject = () => {
 
             <form>
                 <input
+                    data-testid="firstName"
                     type="text"
                     value={name.firstName}
                     onChange={(e) => setName({ ...name, firstName: e.target.value })}
                 />
                 <input
+                    data-testid="lastName"
                     type="text"
                     value={name.lastName}
                     onChange={(e) => setName({ ...name, lastName: e.target.value })}
@@ -41,7 +43,7 @@ const UseStateObject = () => {
                 </button>
             </form>
 
-            {users.length > 0 &&
+            {/* {users.length > 0 &&
                 toggleList &&
                 users.map((user) => (
                     <div key={user.id} className="user">
@@ -50,7 +52,8 @@ const UseStateObject = () => {
                         <p>username: {user.username}</p>
                         <p>email: {user.email}</p>
                     </div>
-                ))}
+                ))} */}
+            {toggleList && <div>button clicked...</div>}
         </div>
     );
 };
